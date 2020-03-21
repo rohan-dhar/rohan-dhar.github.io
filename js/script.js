@@ -55,12 +55,11 @@ $(document).ready(()=>{
 		$e: null,
 		canvas: null,
 		ctx: null,
-		colors: ["rgba(39, 212, 150, 0.75)", "rgba(53, 151, 255, 0.75)", "rgba(255, 78, 79, 0.75)", "rgba(112, 94, 255,0.75)"],
-		bg: $("#page-1").css("background-color"),
+		colors: ["#5f73ffee", "#ff5f73ee", '#51d58ee9'],
 		bubbles: [],
 		speedRange: [-2, 2],
-		radRange: [30, 80],
-		num: 25,
+		radRange: [30, 90],
+		num: 20,
 		setSize: function(){
 			this.canvas.height = window.innerHeight;
 			this.canvas.width = window.innerWidth;			
@@ -90,8 +89,8 @@ $(document).ready(()=>{
 			}
 		},
 		render: function(){
-			bubbles.ctx.fillStyle = bubbles.bg;
-			bubbles.ctx.fillRect(0, 0, bubbles.canvas.width, bubbles.canvas.height);
+			bubbles.canvas.height = bubbles.canvas.height;
+			
 			for(let i = 0; i < bubbles.bubbles.length; i++){
 				let b = bubbles.bubbles[i];
 				bubbles.ctx.beginPath();
