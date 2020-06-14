@@ -18,9 +18,9 @@ a {
 
 :root {
 	font-size: 10pt;
-	--cyan: #10b998;
+	--cyan: #2ccaaa;
 	--cyan-dark: #103a36;
-	--cyan-light: #0ec19e;
+	--cyan-light: #2ccaaa;
 	--pink: #fb6396;
 	--dark-pink: #bb3f69;
 	--font: "Lato";
@@ -131,7 +131,7 @@ nav {
 }
 
 .buildings {
-	position: absolute;
+	position: fixed;
 	bottom: 7%;
 	width: 55%;
 	height: auto;
@@ -160,25 +160,25 @@ nav {
 }
 
 .page-1-circle {
-	position: absolute;
+	position: fixed;
 	width: 180vw;
 	height: 190vw;
 	left: -60vw;
 	top: 10vh;
 	border-radius: 100%;
-	background: linear-gradient(90deg, #19d8b3 50%, #109e83 100%);
+	background: linear-gradient(90deg, #54e4c8 50%, #109e83 100%);
 }
 
 #page-2 {
 	background-color: #fff;
-	padding-top: 200px;
+	padding-top: 100px;
 	padding-bottom: 90px;
 }
 
 .waves {
-	position: absolute;
-	height: 20%;
-	bottom: 0px;
+	position: fixed;
+	height: 40%;
+	bottom: -20%;
 	left: 0px;
 	width: 100%;
 }
@@ -205,11 +205,6 @@ nav {
 	line-height: 25px;
 }
 
-.waves-2 {
-	top: 0px;
-	height: 150px !important;
-}
-
 #page-3 {
 	background: var(--cyan);
 	padding-top: 60px;
@@ -217,8 +212,10 @@ nav {
 }
 
 #page-3-head {
-	color: #fff;
-	font-size: 4rem;
+	margin-top: 30px;
+	margin-bottom: -90px;
+	color: rgba(0, 0, 0, 0.25);
+	font-size: 12rem;
 }
 
 #page-3-schedule {
