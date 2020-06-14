@@ -1,132 +1,252 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Nunito:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Nunito:700,800,900|Alata|Cabin:500,600,700|Comfortaa:500,600,700|Quicksand:400,500,600,700|Six+Caps|Anton|Lobster|Alfa+Slab+One|Fredoka+One|Montserrat:400,500,600,700&display=swap" rel="stylesheet">
-
-        <title>Induction 20' | IIIT Delhi</title>
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53684035-3"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', 'UA-53684035-3');
-        </script>
-
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/velocity.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-    </head>
-    <body>
-        <header>
-          <img id="logo" src='img/iiitd.png'>
-        	<nav>
-        		<div class="menu-item" id='menu-item-1'>Home
-        		</div><div class="menu-item" id='menu-item-2'>Schedule
-        		</div><div class="menu-item" id='menu-item-3'>Details
-        		</div><div class="menu-item" id='menu-item-4'>Reach Out
-        		</div>
-        		
-        		<div id="menu-line"></div>
-        	</nav>
-        </header>
-        <div class="page" id='page-1'>
-            <canvas id="blob"></canvas>    
-            <div id="page-1-center">            
-                <h1>INDUCTION 20'</h1>
-                <h2 id="sub-head">IIIT Delhi</h2>
-            </div>
-        </div>
-        <div class="page" id='page-2'>
-            <h2 class="page-head" id='page-2-head'>
-                Schedule
-                <div class="page-head-sep"></div>
-            </h2>
-            <div id="page-2-schedule">
-               <div id="page-2-schedule-line"></div>
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>21</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>22</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>23</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>24</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>25</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>26</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>27</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-               <div class="schedule-item">
-                   <div class="schedule-date"><span>28</span> June</div>
-                   <h3 class="schedule-item-head">Event Name</h3>
-                   <div class="schedule-item-desc">
-                       Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   </div>
-               </div> 
-            </div>
-        </div>
-        
-    </body>
+		<title>Document</title>
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+	<body>
+		<header>
+			<img src="./img/iiitd.png" alt="IIIT Delhi logo" id="header-logo" />
+			<nav>
+				<div class="nav-item">Home</div>
+				<div class="nav-item">About</div>
+				<div class="nav-item">Schedule</div>
+				<div class="nav-item">Contact</div>
+			</nav>
+		</header>
+		<section class="page" id="page-1">
+			<div class="page-1-circle"></div>
+			<img src="./img/waves-up.svg" alt="Waves" class="waves" />
+			<img src="./img/hero.svg" alt="Induction" class="hero" />
+			<h3 class="page-1-year">Batch of <b> 2024</b></h3>
+			<img src="./img/buildings.svg" alt="IIIT Delhi Buildings" class="buildings" />
+		</section>
+		<section class="page" id="page-2">
+			<img src="./img/waves-down.svg" alt="Waves" class="waves waves-2" />
+			<div class="page-content">
+				<h1 class="page-2-head">Welcome to<br /><span>IIIT Delhi</span></h1>
+				<p class="page-2-text">
+					IIIT-Delhi strives to generate a pool of graduates who not only possess the essential qualities to
+					fulfill their responsibility as an engineer, but also as a citizen and a human being. Our 3 week
+					long Induction Program has been designed with precision to promote academic success, personal and
+					social development, and to provide students with information about services and support systems at
+					IIIT-Delhi. The primary goal of our Induction Program is to make the new students acquainted and
+					connected to the people and resources in the IIITD community. We propel to generate a plethora of
+					opportunities and offer experiences to engage the curious minds productively, challenge their
+					beliefs, and motivate them to grow intellectually, socially, and emotionally. This 21 days
+					fun-packed learning programme encompasses a blend of activities including motivational talks by
+					prominent speakers, panel discussions, ice breaking sessions, individual / group manoeuvre, stress
+					and time management workshops, ethics and value learning, and much more. To develop a close knit
+					social interaction and a sense of belongingness within the environment, activities such as movie
+					night, karaoke, talent show, quiz, etc are also planned for our students.
+				</p>
+			</div>
+		</section>
+		<section class="page" id="page-3">
+			<div class="page-content">
+				<h2 id="page-3-head">
+					Schedule
+				</h2>
+				<div id="page-3-schedule">
+					<div id="page-3-schedule-line"></div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>21</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>22</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>23</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>24</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>25</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>26</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>27</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-date"><span>28</span> June</div>
+						<h3 class="schedule-item-head">Event Name</h3>
+						<div class="schedule-item-desc">
+							Event descriptions. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
