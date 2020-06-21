@@ -110,18 +110,43 @@ header {
 nav {
 	height: 100%;
 	display: flex;
-	width: 300px;
-	/* justify-content: space-between; */
-	margin-right: 90px;
+	flex-wrap: wrap;
+	margin-right: 50px;
 	align-items: center;
 }
 
 .nav-item {
-	margin-left: 10px;
-	margin-right: 10px;
+	position: relative;
+	margin-left: 15px;
+	margin-right: 15px;
 	text-transform: uppercase;
 	color: #fff;
+	font-size: 1rem;
+	padding: 10px 15px 10px 15px;
 	letter-spacing: 2px;
+	cursor: pointer;
+	transition: color 0.15s;
+}
+
+.nav-item::after {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 100%;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	transition: width 0.15s ease-in-out;
+	z-index: -1;
+}
+.nav-item:hover,
+.nav-item-active {
+	color: var(--cyan);
+}
+
+.nav-item:hover::after,
+.nav-item-active::after {
+	width: 100%;
 }
 
 #page-1 {
