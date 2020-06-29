@@ -26,20 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	const pageLimits = getPageLimits();
 
 	const updateNav = (scroll) => {
-		const threshold = 0.6;
+		const threshold = 0.9;
 		const makeActive = (i) => {
 			$(".nav-item").forEach((e) => e.classList.remove("nav-item-active"));
 			$(".nav-item")[i].classList.add("nav-item-active");
 		};
-		console.log(pageLimits[1] * threshold, scroll);
 
-		if (scroll >= pageLimits[pageLimits.length - 2] * threshold) {
-			return makeActive(pageLimits.length - 1);
-		}
-		for (let i = 0; i < pageLimits.length - 1; i++) {
-			if (scroll <= pageLimits[i + 1] * threshold) {
+		for (let i = 0; i < pageLimits.length; i++) {
+			if (scroll > pageLimits[i]) {
 				makeActive(i);
-				break;
 			}
 		}
 	};
@@ -62,15 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	];
 
 	const handleScroll = function (y) {
-		if (y >= window.innerHeight) {
-			return;
+		if (y < window.innerHeight) {
+			elems.forEach((e) => {
+				e.move(y);
+			});
 		}
 
 		updateNav(y);
-
-		elems.forEach((e, i) => {
-			e.move(y);
-		});
 	};
 
 	document.addEventListener("scroll", () => handleScroll(document.documentElement.scrollTop));

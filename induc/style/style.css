@@ -131,12 +131,12 @@ nav {
 .nav-item::after {
 	position: absolute;
 	content: "";
-	width: 2px;
-	height: 100%;
+	height: 2px;
+	width: 100%;
 	background-color: #fff;
-	top: 0;
+	bottom: 0;
 	left: 0;
-	transition: width 0.15s ease-in-out;
+	transition: height 0.15s ease-in-out;
 	z-index: -1;
 }
 .nav-item:hover,
@@ -146,7 +146,7 @@ nav {
 
 .nav-item:hover::after,
 .nav-item-active::after {
-	width: 100%;
+	height: 100%;
 }
 
 #page-1 {
@@ -189,7 +189,7 @@ nav {
 	width: 180vw;
 	height: 190vw;
 	left: -60vw;
-	top: 10vh;
+	top: 13vh;
 	border-radius: 100%;
 	background: linear-gradient(90deg, #54e4c8 50%, #109e83 100%);
 }
@@ -250,7 +250,7 @@ nav {
 	margin-top: 40px;
 	padding-left: 80px;
 	padding-right: 60px;
-	background-color: #f0f0f0;
+	background-color: #fff;
 	border-radius: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -306,7 +306,7 @@ nav {
 	padding: 15px;
 	padding-bottom: 20px;
 	background-color: #fff;
-	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.06);
 }
 
 .schedule-item-head {
@@ -320,4 +320,41 @@ nav {
 	margin-top: 5px;
 	font-family: quicksand;
 	font-size: 11pt;
+}
+
+.schedule-item-sub {
+	width: 97%;
+	margin: 20px auto 20px auto;
+	/* border-radius: 10px; */
+	border-bottom: 2px solid var(--pink);
+	font-size: 1.2rem;
+	padding: 18px;
+}
+
+.schedule-item-sub h3 {
+	margin-bottom: 15px;
+	font-size: 1.5rem;
+}
+
+footer {
+	position: relative;
+	height: 70px;
+	background-color: var(--cyan-dark);
+	display: flex;
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	white-space: nowrap;
+	z-index: 2;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+footer a {
+	display: inline;
+	transition: color 0.2s;
+}
+
+footer a:hover {
+	color: rgba(255, 255, 255, 0.6);
 }
