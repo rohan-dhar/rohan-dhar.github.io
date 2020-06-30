@@ -40,20 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	class AnimateElem {
-		constructor(selector, speed) {
+		constructor(selector, speed, log = false) {
 			this.speed = speed;
 			this.node = $(selector)[0];
-			this.start = this.node.offsetTop;
+			const that = this;
+			setTimeout(() => {
+				that.start = that.node.offsetTop;
+			}, 100);
+			this.log = log;
 		}
 		move(y) {
 			this.node.style.top = this.start - this.speed * y + "px";
+			if (this.log) {
+				console.log("Start: ", this.start);
+			}
 		}
 	}
 
 	const elems = [
 		new AnimateElem(".waves", 1.4),
 		new AnimateElem(".page-1-circle", -2),
-		new AnimateElem(".buildings", 1.4),
+		new AnimateElem(".buildings", 1.4, true),
 	];
 
 	const handleScroll = function (y) {
