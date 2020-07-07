@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		return pageLimits;
 	};
 	const pageLimits = getPageLimits();
-
+	const thershold = 100;
 	const updateNav = (scroll) => {
 		const makeActive = (i) => {
 			$(".nav-item").forEach((e) => e.classList.remove("nav-item-active"));
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		};
 
 		for (let i = 0; i < pageLimits.length; i++) {
-			if (scroll > pageLimits[i]) {
+			if (scroll > pageLimits[i] - 100) {
 				makeActive(i);
 			}
 		}
@@ -114,4 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.addEventListener("scroll", () => handleScroll(document.documentElement.scrollTop));
 
 	$("#page-3-schedule")[0].addEventListener("click", ({ target }) => toggle(target.closest(".schedule-item")));
+
+	$(".nav-item").forEach((elem) =>
+		elem.addEventListener("click", (e) => {
+			const i = Number(e.currentTarget.id.substr(9));
+			Velocity($("#page-" + i)[0], "scroll");
+		})
+	);
 });
