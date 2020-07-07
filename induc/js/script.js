@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const pageLimits = getPageLimits();
 
 	const updateNav = (scroll) => {
-		const threshold = 0.9;
 		const makeActive = (i) => {
 			$(".nav-item").forEach((e) => e.classList.remove("nav-item-active"));
 			$(".nav-item")[i].classList.add("nav-item-active");
@@ -40,27 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	class AnimateElem {
-		constructor(selector, speed, log = false) {
+		constructor(selector, speed) {
 			this.speed = speed;
 			this.node = $(selector)[0];
-			const that = this;
-			setTimeout(() => {
-				that.start = that.node.offsetTop;
-			}, 100);
-			this.log = log;
 		}
 		move(y) {
-			this.node.style.top = this.start - this.speed * y + "px";
-			if (this.log) {
-				console.log("Start: ", this.start);
-			}
+			this.node.style.transform = `translateY(${-this.speed * y}px)`;
 		}
 	}
 
 	const elems = [
 		new AnimateElem(".waves", 1.4),
 		new AnimateElem(".page-1-circle", -2),
-		new AnimateElem(".buildings", 1.4, true),
+		new AnimateElem(".buildings", 1.4),
 	];
 
 	const handleScroll = function (y) {
@@ -73,5 +64,54 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateNav(y);
 	};
 
+	const toggle = (scheduleItem) => {
+		if (!scheduleItem) return;
+
+		const animOptions = {
+			duration: 450,
+			easing: "easeOutQuart",
+		};
+
+		const close = () => {
+			scheduleItem.dataset.isOpen = "false";
+			const children = scheduleItem.querySelectorAll(".schedule-item-sub");
+			Velocity(children, "stop")
+				.then(() => Velocity(children, { opacity: 0, scaleY: 0.7, translateY: -60 }, animOptions))
+				.then(() =>
+					scheduleItem.dataset.isOpen === "false"
+						? children.forEach((elem) => (elem.style.display = "none"))
+						: null
+				);
+		};
+
+		const open = () => {
+			const children = scheduleItem.querySelectorAll(".schedule-item-sub");
+			scheduleItem.dataset.isOpen = "true";
+			children.forEach((elem) => {
+				elem.style.display = "block";
+			});
+			setTimeout(() => {
+				Velocity(children, "stop").then(() =>
+					Velocity(
+						children,
+						{
+							opacity: 1,
+							scaleY: 1,
+							translateY: 0,
+						},
+						animOptions
+					)
+				);
+			}, 0);
+		};
+		if (scheduleItem.dataset.isOpen === "true") {
+			close();
+		} else {
+			open();
+		}
+	};
+
 	document.addEventListener("scroll", () => handleScroll(document.documentElement.scrollTop));
+
+	$("#page-3-schedule")[0].addEventListener("click", ({ target }) => toggle(target.closest(".schedule-item")));
 });

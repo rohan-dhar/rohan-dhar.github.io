@@ -23,9 +23,9 @@ a {
 	--cyan-light: #2ccaaa;
 	--pink: #fb6396;
 	--dark-pink: #bb3f69;
-	--font: "Lato";
+	--font: "Poppins";
 	--font-2: "Quicksand";
-	--font-3: "Poppins";
+	--font-3: "Lato";
 	--font-round: "Nunitio";
 	--content-width: 75%;
 }
@@ -161,7 +161,7 @@ nav {
 	width: 55%;
 	height: auto;
 	left: 60%;
-	transform: translateX(-50%);
+	margin-left: -25%;
 }
 
 .hero,
@@ -247,10 +247,9 @@ nav {
 	position: relative;
 	box-sizing: border-box;
 	margin: auto;
-	margin-top: 40px;
 	padding-left: 80px;
 	padding-right: 60px;
-	background-color: #fff;
+	background-color: #f0f0f0;
 	border-radius: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -306,26 +305,44 @@ nav {
 	padding: 15px;
 	padding-bottom: 20px;
 	background-color: #fff;
-	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.06);
+	box-shadow: 0px 0px 14px 1px rgba(0, 0, 0, 0.04);
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+
+.schedule-item:hover {
+	background-color: #f7f7f7;
 }
 
 .schedule-item-head {
 	color: #333;
 	font-family: var(--font-2);
-	font-size: 14pt;
+	font-weight: 600;
+	font-size: 1.4rem;
 }
 
 .schedule-item-desc {
 	color: #222;
 	margin-top: 5px;
 	font-family: quicksand;
-	font-size: 11pt;
+	font-size: 1.1rem;
+}
+
+.schedule-head {
+	font-size: 2rem;
+	width: 90%;
+	margin: auto;
+	margin-top: -45px;
+	color: #444;
+	font-size: 1.4rem;
 }
 
 .schedule-item-sub {
+	display: none;
+	opacity: 0;
 	width: 97%;
+	transform: translateY(-60px) scale(1, 0.7);
 	margin: 20px auto 20px auto;
-	/* border-radius: 10px; */
 	border-bottom: 2px solid var(--pink);
 	font-size: 1.2rem;
 	padding: 18px;
