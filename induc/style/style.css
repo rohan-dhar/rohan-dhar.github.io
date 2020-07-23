@@ -2,6 +2,16 @@
 	Global Stytling and Definations
 */
 
+@keyframes loader-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -32,6 +42,17 @@ a {
 
 body {
 	background-color: #fff;
+}
+
+.loader {
+	height: 40px;
+	width: 40px;
+	margin: 20px auto;
+	border: 3px solid var(--cyan);
+	border-radius: 100%;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	animation: loader-spin 0.5s infinite;
 }
 
 .btn {
@@ -269,12 +290,12 @@ nav {
 	position: relative;
 	font-family: var(--font-2) One;
 	text-transform: uppercase;
-	font-size: 1.05rem;
+	font-size: 0.88rem;
 	background-color: var(--dark-pink);
 	border-radius: 39px;
 	letter-spacing: 1px;
 	color: #fff;
-	font-weight: 700;
+	font-weight: 600;
 	display: inline-block;
 	left: -65px;
 	height: 39px;
@@ -295,6 +316,8 @@ nav {
 	text-align: center;
 	font-weight: 800;
 	margin-left: -22px;
+	font-size: 1rem;
+	margin-right: 4px;
 }
 
 .schedule-item {
@@ -330,8 +353,9 @@ nav {
 
 .schedule-head {
 	font-size: 2rem;
-	width: 90%;
+	width: 100%;
 	margin: auto;
+	margin-left: 70px;
 	margin-top: -45px;
 	color: #444;
 	font-size: 1.4rem;
@@ -349,8 +373,8 @@ nav {
 }
 
 .schedule-item-sub h3 {
-	margin-bottom: 15px;
-	font-size: 1.5rem;
+	margin-bottom: 10px;
+	font-size: 1.3rem;
 }
 
 footer {

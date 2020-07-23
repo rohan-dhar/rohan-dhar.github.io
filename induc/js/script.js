@@ -1,3 +1,14 @@
+firebase.initializeApp({
+	apiKey: "AIzaSyAiHJ1lLHpN5qIDh5QLW3vVarDEQ439o-I",
+	authDomain: "inductioniiitd2020.firebaseapp.com",
+	databaseURL: "https://inductioniiitd2020.firebaseio.com",
+	projectId: "inductioniiitd2020",
+	storageBucket: "inductioniiitd2020.appspot.com",
+	messagingSenderId: "676495080890",
+	appId: "1:676495080890:web:7dbcd8f31791aaaaf8b183",
+	measurementId: "G-GNNRR4CBRZ",
+});
+
 document.addEventListener("DOMContentLoaded", () => {
 	const $ = document.querySelectorAll.bind(document);
 	const throttle = (fn, delay, thisArg = null) => {
@@ -10,6 +21,86 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		};
 	};
+
+	const schedule = {
+		loading: true,
+		error: false,
+		_data: null,
+		el: null,
+		months: [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December",
+		],
+		db: firebase.database(),
+		genHTML() {
+			if (!this.data) {
+				return null;
+			}
+			let html = `<div id="page-3-schedule-line"></div>`;
+
+			for (let date in this.data) {
+				const dateObj = new Date(date);
+				// Events holders
+				html += `
+					<div class="schedule-item">
+						<div class="schedule-date"><span>${dateObj.getDate()}</span>${this.months[dateObj.getMonth() + 1]}</div>
+						<h2 class="schedule-head">Events</h2>
+				`;
+				// Events here
+				this.data[date].forEach((event) => {
+					html += `
+					<div class="schedule-item-sub">
+						<h3>${event.eventName}</h3>
+						<p>${event.eventDesc}</p>
+					</div>
+					`;
+				});
+
+				html += "</div></div>";
+			}
+
+			return html;
+		},
+		render() {
+			if (!this.el) return;
+			if (this.loading) {
+				this.el.innerHTML = '<div class="loader"></div>';
+			} else {
+				this.el.innerHTML = this.genHTML();
+			}
+		},
+		set data(data) {
+			const dateMap = {};
+			data.forEach((d) => (dateMap[d.date] ? dateMap[d.date].push(d) : (dateMap[d.date] = [d])));
+			this._data = dateMap;
+		},
+		get data() {
+			return this._data;
+		},
+		init() {
+			const ref = this.db.ref("Schedule");
+			this.el = $("#page-3-schedule")[0];
+			this.render();
+			ref.on("value", (snap) => {
+				this.loading = false;
+				this.data = snap.val().slice(1);
+				console.log(this.data);
+				this.render();
+			});
+		},
+	};
+
+	schedule.init();
 
 	const getPageLimits = () => {
 		const pageNum = $(".page").length;
