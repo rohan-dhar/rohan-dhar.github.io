@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			for (let date in this.data) {
 				const dateObj = this.parseDate(date);
 
-				console.log(dateObj);
-
 				// Events holders
 				html += `
 					<div class="schedule-item">

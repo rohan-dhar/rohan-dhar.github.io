@@ -24,6 +24,7 @@
 a {
 	text-decoration: none;
 	color: inherit;
+	color: var(--blue);
 }
 
 :root {
@@ -32,6 +33,7 @@ a {
 	--cyan-dark: #103a36;
 	--cyan-light: #2ccaaa;
 	--pink: #fb6396;
+	--blue: #5776ff;
 	--dark-pink: #bb3f69;
 	--font: "Poppins";
 	--font-2: "Quicksand";
@@ -382,10 +384,10 @@ footer {
 	height: 70px;
 	background-color: var(--cyan-dark);
 	display: flex;
-	color: #fff;
+	color: rgba(255, 255, 255, 0.5);
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: row;
 	white-space: nowrap;
 	z-index: 2;
 	font-size: 1.2rem;
@@ -394,8 +396,11 @@ footer {
 footer a {
 	display: inline;
 	transition: color 0.2s;
+	margin: 0 5px;
+
+	color: rgba(255, 255, 255, 1);
 }
 
 footer a:hover {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.7);
 }
