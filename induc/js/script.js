@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			"December",
 		],
 		db: firebase.database(),
+		parseDate(date) {
+			let dateSplit = date.split("-");
+			dateSplit = dateSplit.map((elem) => parseInt(elem));
+			return {
+				day: dateSplit[0],
+				month: dateSplit[1],
+				year: dateSplit[2],
+			};
+		},
 		genHTML() {
 			if (!this.data) {
 				return null;
@@ -49,11 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			let html = `<div id="page-3-schedule-line"></div>`;
 
 			for (let date in this.data) {
-				const dateObj = new Date(date);
+				const dateObj = this.parseDate(date);
+
+				console.log(dateObj);
+
 				// Events holders
 				html += `
 					<div class="schedule-item">
-						<div class="schedule-date"><span>${dateObj.getDate()}</span>${this.months[dateObj.getMonth() + 1]}</div>
+						<div class="schedule-date"><span>${dateObj.day}</span>${this.months[dateObj.month + 1]}</div>
 						<h2 class="schedule-head">Events</h2>
 				`;
 				// Events here
