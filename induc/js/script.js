@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		error: false,
 		_data: null,
 		el: null,
+		_groups: null,
+		selectedGroup: null,
+		attachListener() {
+			$("#page-3-schedule-select")[0].addEventListener("change", (e) => {
+				schedule.handleGroupChange(e.target.value);
+			});
+		},
 		months: [
 			"January",
 			"February",
@@ -42,6 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			"December",
 		],
 		db: firebase.database(),
+		handleGroupChange(group) {
+			if (group === "all") {
+				this.selectedGroup = false;
+			} else if (this.groups.has(group)) {
+				this.selectedGroup = group;
+			}
+			this.render();
+		},
+		updateSelect() {
+			$("#page-3-schedule-select")[0].value = this.selectedGroup ? this.selectedGroup : "all";
+		},
 		parseDate(date) {
 			let dateSplit = date.split("-");
 			dateSplit = dateSplit.map((elem) => parseInt(elem));
@@ -51,12 +69,37 @@ document.addEventListener("DOMContentLoaded", () => {
 				year: dateSplit[2],
 			};
 		},
+		setGroups() {
+			this._groups = new Set();
+			Object.entries(this.data).forEach(([key, events]) => {
+				events.forEach((event) => {
+					Object.keys(event.group).forEach((group) => this._groups.add(group));
+				});
+			});
+			this.selectedGroup = false;
+		},
+		get groups() {
+			return this._groups;
+		},
 		genHTML() {
 			if (!this.data) {
 				return null;
 			}
 			let html = `<div id="page-3-schedule-line"></div>`;
 
+			// Generate dropdown
+			html += `
+				<h4 id="page-3-schedule-select-head">Select your group</h4>
+				<select id="page-3-schedule-select">
+					<option value='all'>all</option>
+					${Array.from(this.groups)
+						.map((group) => `<option value="${group}"> ${group} </option>`)
+						.join("")}
+				</select>
+			`;
+			// Generate events
+
+			let i = 1;
 			for (let date in this.data) {
 				const dateObj = this.parseDate(date);
 
@@ -64,21 +107,30 @@ document.addEventListener("DOMContentLoaded", () => {
 				html += `
 					<div class="schedule-item">
 						<div class="schedule-date"><span>${dateObj.day}</span>${this.months[dateObj.month + 1]}</div>
-						<h2 class="schedule-head">Events</h2>
-				`;
-				// Events here
-				this.data[date].forEach((event) => {
-					html += `
-					<div class="schedule-item-sub">
-						<h3>${event.eventName}</h3>
-						<p>${event.eventDesc}</p>
-					</div>
-					`;
-				});
-
-				html += "</div></div>";
+						<h2 class="schedule-head">Day ${i}</h2>
+						${this.data[date]
+							.filter((event) => !this.selectedGroup || event.group[this.selectedGroup])
+							.map(
+								(event) => `
+							<div class="schedule-item-sub">
+								<h3>${event.eventName}</h3>
+								<div class="schedule-item-sub-details">
+								<span>From</span> ${event.startTime} hours, <span>lasting</span> ${event.duration} hours
+								</div>
+								<p>${event.eventDesc}</p>
+							</div>`
+							)
+							.join("")}`;
+				if (
+					this.data[date].filter((event) => !this.selectedGroup || event.group[this.selectedGroup]).length ===
+					0
+				) {
+					html += `<div class="schedule-item-sub-none">No events for ${this.selectedGroup} group</div>`;
+				}
+				html += `</div></div>`;
+				console.log(event);
+				i++;
 			}
-
 			return html;
 		},
 		render() {
@@ -87,6 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				this.el.innerHTML = '<div class="loader"></div>';
 			} else {
 				this.el.innerHTML = this.genHTML();
+				const addEvent = new Event("addContent");
+				window.dispatchEvent(addEvent);
+				this.updateSelect();
+				this.attachListener();
 			}
 		},
 		set data(data) {
@@ -104,8 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			ref.on("value", (snap) => {
 				this.loading = false;
 				this.data = snap.val().slice(1);
-				console.log(this.data);
+				this.setGroups();
 				this.render();
+				console.log(this.data);
 			});
 		},
 	};
@@ -122,10 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		};
 		setPageLimits();
 		window.addEventListener("resize", setPageLimits);
+		window.addEventListener("addContent", setPageLimits);
 		return pageLimits;
 	};
 	const pageLimits = getPageLimits();
-	const thershold = 100;
+
 	const updateNav = (scroll) => {
 		const makeActive = (i) => {
 			$(".nav-item").forEach((e) => e.classList.remove("nav-item-active"));
@@ -189,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const children = scheduleItem.querySelectorAll(".schedule-item-sub");
 			scheduleItem.dataset.isOpen = "true";
 			children.forEach((elem) => {
-				elem.style.display = "block";
+				elem.style.display = "flex";
 			});
 			setTimeout(() => {
 				Velocity(children, "stop").then(() =>
