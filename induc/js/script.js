@@ -9,6 +9,10 @@ firebase.initializeApp({
 	measurementId: "G-GNNRR4CBRZ",
 });
 
+const parseTime = (time) => {
+	const mins = time / 100;
+};
+
 document.addEventListener("DOMContentLoaded", () => {
 	const $ = document.querySelectorAll.bind(document);
 	const throttle = (fn, delay, thisArg = null) => {
