@@ -10,7 +10,20 @@ firebase.initializeApp({
 });
 
 const parseTime = (time) => {
-	const mins = time / 100;
+	let mins = time % 100;
+	mins = mins < 10 ? `0${mins}` : mins;
+	let hours = Math.floor(time / 100);
+	const ampm = hours > 12 ? "PM" : "AM";
+	hours = hours > 12 ? hours - 12 : hours;
+	return `${hours}:${mins} ${ampm}`;
+};
+
+const parseDuration = (duration) => {
+	const hours = Math.floor(duration);
+	let mins = Math.floor((duration - hours) * 100);
+	let res = hours !== 0 ? hours + (hours === 1 ? " hour " : " hours ") : " ";
+	res += mins !== 0 ? mins + (mins === 1 ? " minute" : " minutes") : "";
+	return res;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -119,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							<div class="schedule-item-sub">
 								<h3>${event.eventName}</h3>
 								<div class="schedule-item-sub-details">
-								<span>From</span> ${event.startTime} hours, <span>lasting</span> ${event.duration} hours
+								<span>From</span> ${parseTime(event.startTime)}, <span>lasting</span> ${parseDuration(event.duration)}
 								</div>
 								<p>${event.eventDesc}</p>
 							</div>`
@@ -132,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					html += `<div class="schedule-item-sub-none">No events for ${this.selectedGroup} group</div>`;
 				}
 				html += `</div></div>`;
-				console.log(event);
+
 				i++;
 			}
 			return html;
@@ -166,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				this.data = snap.val().slice(1);
 				this.setGroups();
 				this.render();
-				console.log(this.data);
 			});
 		},
 	};
