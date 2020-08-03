@@ -30,12 +30,15 @@ a {
 	--font-3: "Lato";
 	--font-round: "Nunitio";
 	--content-width: 75%;
+	height: 100vh;
+	width: 100vw;
 }
 
 body {
 	background-color: #111;
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -69,7 +72,6 @@ body {
 }
 
 .circle {
-	z-index: 2;
 	position: absolute;
 	border-radius: 100%;
 	height: 360px;
@@ -146,15 +148,15 @@ body {
 	z-index: 10;
 	color: #fff;
 	display: flex;
-	width: 90%;
+	width: 80%;
 	max-width: 1000px;
-	left: 18%;
+	left: 14%;
 	justify-content: center;
 	align-items: center;
 	top: 32%;
 }
 
-.info img {
+.profile-img {
 	width: 30%;
 }
 
@@ -163,20 +165,20 @@ body {
 }
 
 .text h1 {
-	font-size: 7rem;
+	font-size: 5.6rem;
 	font-weight: 200;
 }
 
 .text h3 {
 	font-weight: 300;
 	text-transform: uppercase;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	letter-spacing: 10px;
 }
 
 .text p {
 	margin-top: 30px;
-	font-size: 1.3rem;
+	font-size: 1.15rem;
 }
 
 button {
@@ -187,12 +189,12 @@ button {
 	padding-left: 30px;
 	padding-right: 30px;
 	cursor: pointer;
+	width: 240px;
 	transition: color 0.2s;
 	overflow: hidden;
 	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 0.9rem;
-	margin-top: 30px;
 	outline: none;
 }
 
@@ -223,4 +225,25 @@ button:hover::after {
 	width: 100%;
 	transform: rotate(0);
 	opacity: 1;
+}
+
+.social {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-around;
+	width: 400px;
+	align-items: center;
+}
+
+.social img {
+	height: 52px;
+	margin-left: 10px;
+	margin-left: 10px;
+	padding: 10px;
+	border-radius: 100%;
+	transition: background-color 0.4s;
+}
+
+.social img:hover {
+	background-color: rgba(255, 255, 255, 0.2);
 }
