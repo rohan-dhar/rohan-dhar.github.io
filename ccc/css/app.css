@@ -1,0 +1,170 @@
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font);
+	box-sizing: border-box;
+}
+
+.circle {
+	position: absolute;
+	border-radius: 100%;
+	height: 200px;
+	width: 200px;
+	opacity: 0.35;
+}
+
+:root {
+	font-size: 10pt;
+	--red: #ff4f67;
+	--theme: #5272ff;
+	--yellow: #ffd154;
+	--orange: #ff9d4d;
+
+	--blue: #657fff;
+	--green: #35d894;
+	--bg: #181823;
+	--bg-light: #fff;
+	--bg-dark: #eee;
+	--bg-dark-2: #e5e5e5;
+	--text: #222;
+	--text-light: #888;
+	--easing: cubic-bezier(0.68, 0.28, 0.82, 0.64);
+	--font: Poppins;
+	--font-2: Quicksand;
+	--font-3: Nunito;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	background-color: #181823;
+	background-image: url("../img/bg2.JPG");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.page {
+	position: relative;
+	width: 95%;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 60px;
+	margin: auto;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+.page h2 {
+	position: relative;
+	font-size: 3rem;
+	margin-bottom: 30px;
+}
+
+.page-desc {
+	font-size: 1.2rem;
+}
+
+#page-1 {
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+}
+
+button {
+	cursor: pointer;
+	font-family: var(--font);
+	border: 4px solid var(--blue);
+	color: var(--blue);
+	height: 45px;
+	display: block;
+	padding: 0 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: transparent;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover,
+button:focus {
+	color: #fff;
+	background-color: var(--blue);
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	background-image: linear-gradient(45deg, var(--red), var(--blue));
+	opacity: 0.3;
+}
+
+#hero {
+	position: absolute;
+	height: 100vh;
+	width: 50vw;
+	min-width: 750px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#page-1-waves {
+	position: absolute;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	min-width: 750px;
+	opacity: 0.85;
+}
+
+#page-1 h1 span {
+	font-weight: 200;
+}
+
+#page-1 h1,
+#page-1 p,
+#page-1 h3 {
+	position: relative;
+	left: 50%;
+	width: 450px;
+	transform: translate(-50%);
+	top: 39%;
+	color: #fff;
+}
+
+#page-1 h3 {
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 3px;
+	font-size: 1.5rem;
+}
+
+#page-1 h1 {
+	font-size: 4rem;
+}
+
+#page-1 p {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-top: 10px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+footer {
+	position: relative;
+	margin-top: 30px;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+}
