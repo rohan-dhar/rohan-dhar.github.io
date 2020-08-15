@@ -40,6 +40,15 @@
 	border-radius: 16px;
 }
 
+.page-2-cont footer {
+	grid-column: 1 / -1;
+}
+
+.page-2-cont footer button {
+	margin: auto;
+	margin-top: -10px;
+}
+
 .page-2-card {
 	padding: 22px;
 	border-radius: 16px;
