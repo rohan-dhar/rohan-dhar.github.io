@@ -112,7 +112,7 @@ button:focus {
 }
 
 .overlay:nth-of-type(1) {
-	background-image: url("../img/bg2.jpg");
+	background-image: url("../img/bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 1;
