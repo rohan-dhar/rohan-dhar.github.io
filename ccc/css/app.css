@@ -22,6 +22,7 @@ a {
 	font-size: 10pt;
 	--red: #ff4f67;
 	--theme: #5272ff;
+	--light-blue: #52abff;
 	--yellow: #ffd154;
 	--orange: #ff9d4d;
 
@@ -186,9 +187,15 @@ footer {
 	position: relative;
 	margin-top: 30px;
 	width: 100%;
-	height: 60px;
+	font-size: 1.15rem;
+	height: 90px;
 	color: #fff;
 	text-align: center;
+}
+
+footer a {
+	color: var(--light-blue);
+	font-weight: 600;
 }
 
 @media screen and (max-width: 800px) {
