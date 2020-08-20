@@ -1,13 +1,3 @@
-#home-btn {
-	position: fixed;
-	background-color: #fff;
-	border: none;
-	color: #333;
-	z-index: 10;
-	left: 30px;
-	top: 30px;
-}
-
 .page-2-cont {
 	position: relative;
 	display: grid;

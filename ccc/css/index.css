@@ -14,18 +14,24 @@
 	right: -140px;
 }
 
-#page-4,
-#page-6 {
+#page-4 {
 	background-color: #f6f6f6;
 }
 
-#page-4 > p,
-#page-6 > p {
+#page-4 > p {
 	font-size: 1.2rem;
 }
 
-#page-4 .circle:nth-of-type(1),
-#page-6 .circle:nth-of-type(1) {
+#page-4 .card button {
+	margin-top: 20px;
+	height: 40px;
+	font-weight: 600;
+	border-width: 3px;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+}
+
+#page-4 .circle:nth-of-type(1) {
 	background-image: linear-gradient(45deg, var(--red), var(--theme));
 	height: 360px;
 	width: 360px;
@@ -33,8 +39,7 @@
 	left: -160px;
 }
 
-#page-4 .circle:nth-of-type(2),
-#page-6 .circle:nth-of-type(2) {
+#page-4 .circle:nth-of-type(2) {
 	background-image: linear-gradient(45deg, var(--orange), var(--red));
 	height: 360px;
 	width: 360px;
