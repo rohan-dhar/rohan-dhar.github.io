@@ -14,14 +14,42 @@
 	right: -140px;
 }
 
-#page-4 {
+#page-4,
+#page-6 {
+	background-color: #f6f6f6;
+}
+
+#page-4 > p,
+#page-6 > p {
+	font-size: 1.2rem;
+}
+
+#page-4 .circle:nth-of-type(1),
+#page-6 .circle:nth-of-type(1) {
+	background-image: linear-gradient(45deg, var(--red), var(--theme));
+	height: 360px;
+	width: 360px;
+	top: -160px;
+	left: -160px;
+}
+
+#page-4 .circle:nth-of-type(2),
+#page-6 .circle:nth-of-type(2) {
+	background-image: linear-gradient(45deg, var(--orange), var(--red));
+	height: 360px;
+	width: 360px;
+	right: -160px;
+	bottom: -160px;
+}
+
+#page-5 {
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #f8f8f8;
 	justify-content: space-around;
 }
 
-#page-4 .circle:nth-of-type(1) {
+#page-5 .circle:nth-of-type(1) {
 	background-image: linear-gradient(45deg, var(--red), var(--theme));
 	height: 360px;
 	width: 360px;
@@ -29,7 +57,7 @@
 	left: -60px;
 }
 
-#page-4 .circle:nth-of-type(2) {
+#page-5 .circle:nth-of-type(2) {
 	background-image: linear-gradient(45deg, var(--orange), var(--red));
 	height: 400px;
 	width: 400px;
@@ -37,11 +65,11 @@
 	right: -120px;
 }
 
-#page-4 h2 {
+#page-5 h2 {
 	width: 100%;
 }
 
-#page-4-sub-head {
+#page-5-sub-head {
 	font-family: var(--font-2);
 	padding-left: 20px;
 	margin: 70px 0 30px 0;
@@ -53,7 +81,7 @@
 	color: #333;
 }
 
-.page-4-card-big {
+.page-5-card-big {
 	position: relative;
 	width: 46%;
 	min-width: 350px;
@@ -66,13 +94,13 @@
 	overflow: hidden;
 }
 
-.page-4-card-big > img {
+.page-5-card-big > img {
 	width: 40%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.page-4-card-big > section {
+.page-5-card-big > section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -80,18 +108,18 @@
 	color: #222;
 }
 
-.page-4-card-big > section h3 {
+.page-5-card-big > section h3 {
 	font-size: 1.7rem;
 }
 
-.page-4-card-big > section h4 {
+.page-5-card-big > section h4 {
 	font-weight: 400;
 	font-weight: 1.5rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
-.page-4-card-small {
+.page-5-card-small {
 	display: flex;
 	justify-content: space-between;
 	position: relative;
@@ -105,7 +133,7 @@
 	margin: 10px;
 }
 
-.page-4-card-small img {
+.page-5-card-small img {
 	height: 65px;
 	width: 65px;
 	margin-right: 10px;
@@ -155,8 +183,8 @@
 }
 
 @media screen and (max-width: 800px) {
-	.page-4-card-big,
-	.page-4-card-small {
+	.page-5-card-big,
+	.page-5-card-small {
 		width: 100%;
 		min-width: 0;
 	}
@@ -167,13 +195,13 @@
 		margin: 0 12px;
 	}
 
-	.page-4-card-big > section {
+	.page-5-card-big > section {
 		padding-left: 25px;
 	}
-	.page-4-card-big > section h3 {
+	.page-5-card-big > section h3 {
 		font-size: 1.5rem;
 	}
-	.page-4-card-small {
+	.page-5-card-small {
 		justify-content: flex-start;
 	}
 	#page-3 h2,
