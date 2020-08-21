@@ -24,3 +24,9 @@
 #page-2 .card button {
 	margin: 25px 0 0 0;
 }
+
+#page-2 .card img {
+	width: 100%;
+	margin-top: 10px;
+	border-radius: 10px;
+}

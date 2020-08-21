@@ -51,7 +51,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #f8f8f8;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
 #page-5 .circle:nth-of-type(1) {
@@ -125,24 +125,26 @@
 }
 
 .page-5-card-small {
+	overflow: hidden;
 	display: flex;
-	justify-content: space-between;
+	/* min-width: 240px; */
+	justify-content: flex-start;
 	position: relative;
-	padding: 12px 18px;
-	border-radius: 20px;
+	border-radius: 15px;
 	color: #333;
-	border: 3px solid #333;
+	padding-right: 27px;
+	box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.02);
+	background-color: #fff;
 	align-items: center;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 	margin: 10px;
 }
 
 .page-5-card-small img {
-	height: 65px;
-	width: 65px;
-	margin-right: 10px;
-	border-radius: 100%;
+	height: 80px;
+	width: 80px;
+	margin-right: 20px;
 	object-fit: cover;
 }
 

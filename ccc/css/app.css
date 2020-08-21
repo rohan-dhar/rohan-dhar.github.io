@@ -52,8 +52,9 @@ body {
 	border: none;
 	color: #333;
 	z-index: 10;
-	left: 30px;
-	top: 30px;
+	left: 60px;
+	right: 0;
+	top: 55px;
 }
 
 .page {
@@ -83,11 +84,20 @@ body {
 	background-color: transparent;
 }
 
-#logo {
+.logo {
 	height: 60px;
 	position: absolute;
 	top: 0px;
+}
+
+#logo-cc {
 	left: 45px;
+}
+
+#logo-iiitd {
+	height: 50px;
+	top: 6px;
+	right: 45px;
 }
 
 button {
@@ -209,12 +219,6 @@ footer a {
 		width: 100%;
 		top: -90px;
 		min-width: 0;
-	}
-
-	#logo {
-		left: 0;
-		right: 0;
-		margin: auto;
 	}
 
 	.page {
