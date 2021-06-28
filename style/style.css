@@ -92,7 +92,7 @@ nav{
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
-	background: #8690ff;
+	background-image: linear-gradient(135deg, #60daff, #6e6cff);
 }
 
 #page-3{
@@ -141,9 +141,10 @@ h1 span{
 
 #page-1-desc{
 	margin-top: 10px;
-	font-weight: 400;
+	font-weight: 500;
 	color: rgba(0,0,0,0.6);
-	font-size: 16pt;
+	font-size: 17pt;
+	font-family: poppins;
 }
 
 h1, #page-1-desc{
@@ -185,11 +186,11 @@ h1, #page-1-desc{
 }
 
 #page-2-half-right{
-	width: 60%;
+	width: calc(65% - 30px);
 	border-radius: 20px;
 	text-align: center;
 	padding-bottom: 70px;
-	background-color: #ffffffdd;
+	background-color: rgba(255,255,255,0.5);
 }
 
 #page-2-head{
@@ -217,7 +218,7 @@ h1, #page-1-desc{
 .page-2-card{
 	display: inline-block;
 	width: 38%;
-	box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.06);
+	box-shadow: 0px 2px 20px 6px rgba(0,0,0,0.08);
 	text-align: left;
 	position: relative;
 	top: 10px;
@@ -248,24 +249,24 @@ h1, #page-1-desc{
 */
 
 .page-2-card-head{
-	padding-left: 25px;
-	padding-right: 25px;
-	padding-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 35px;
 	padding-bottom: 15px;
-	font-size: 15.5pt;
+	font-size: 15pt;
 	color: rgba(0,0,0,0.5);
 	font-weight: 800;
-	font-family: maven pro;
+	font-family: poppins;
 }
 
 .page-2-card-text{
-	padding-left: 25px;
-	padding-right: 25px;
+	padding-left: 35px;
+	padding-right: 35px;
 	font-weight: 300;
-	font-family: maven pro;
-	font-size: 13.5pt;
-	line-height: 24px;
-	color: rgba(0,0,0,0.7);
+	font-family: poppins;
+	font-size: 11.8pt;
+	line-height: 25px;
+	color: rgba(0,0,0,0.6);
 	padding-bottom: 30px;
 }
 
@@ -294,6 +295,7 @@ h1, #page-1-desc{
 	width: 80%;
 	margin: auto;
 	text-align: left;
+	
 }
 .page-3-card{
 	display: inline-block;
@@ -337,7 +339,7 @@ h1, #page-1-desc{
 	border-top-right-radius: 150px;
 	border-top-left-radius: 150px;	
 	background-color: inherit;
-	font-family: maven pro;
+	font-family: poppins;
 	transition: margin-top 0.2s ease-in-out;
 }
 
@@ -435,7 +437,7 @@ h1, #page-1-desc{
 }
 
 #page-4-head{
-	font-family: montserrat;
+	font-family: poppins;
 	font-size: 40pt;
 	color: #fff;
 	text-align: left;
@@ -493,7 +495,7 @@ h1, #page-1-desc{
 		width: 230px;
 		margin-left: 20px;
 		margin-right: 20px;
-		margin-top: 40px;
+		margin-top: 40px;		
 	}
 	#page-2-head{
 		font-size: 27pt;
@@ -509,7 +511,7 @@ h1, #page-1-desc{
 	}
 	
 	.page-2-card-text{
-		font-size: 11.5pt;
+		font-size: 10pt;
 		line-height: 19px;
 		padding-left: 20px;
 		padding-right: 20px;
@@ -586,10 +588,10 @@ h1, #page-1-desc{
 	#page-2-head{
 		margin-top: 70px;
 		font-size: 31pt;
+		margin-bottom: 30px;
 	}
 	#page-2-text{
 		margin-top: 20px;
-		margin-bottom: 40px;
 	}
 	#page-2-half-right{
 		width: 96%;
@@ -597,14 +599,14 @@ h1, #page-1-desc{
 	}
 	.page-2-card{
 		top: 20px;
-		width: 70%;
+		width: 90%;
 		height: auto;
 	}
 	.page-2-card-head{
 		font-size: 14.5pt;
 	}
 	.page-2-card-text{
-		font-size: 12.5pt;
+		font-size: 11pt;
 		line-height: 21px;
 	}
 	#page-2-right-arrow{
